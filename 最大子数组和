@@ -1,0 +1,30 @@
+int maxSubArray(vector<int>& nums) {
+	bool first = true;
+	int preSum;
+	int ret = 0;
+	for (int i = 0; i < nums.size(); i++)
+	{
+		if (first)
+		{
+			preSum = nums[i];
+			ret = preSum;
+			first = false;
+		}
+		else
+		{
+			if (preSum < 0)
+			{
+				preSum = nums[i];
+			}
+			else
+			{
+				preSum += nums[i];
+			}
+			if (preSum > ret)
+			{
+				ret = preSum;
+			}
+		}
+	}
+	return ret;
+}

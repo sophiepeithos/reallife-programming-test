@@ -1,3 +1,4 @@
+//之前的和如果小于0则用当前元素
 int maxSubArray(vector<int>& nums) {
 	bool first = true;
 	int preSum;
